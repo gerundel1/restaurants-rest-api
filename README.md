@@ -1,1 +1,1 @@
-# restaurants-rest-api
+# Restaurants Rest API
