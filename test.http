@@ -1,0 +1,67 @@
+GET http://localhost:8080/ HTTP/1.1
+
+###
+
+POST http://localhost:8080/api/restaurants HTTP/1.1
+content-type: application/json
+
+{
+  "address": {
+    "coord": [
+      -73.8601152,
+      40.7311739
+    ],
+    "building": "97-22",
+    "street": "63 Road",
+    "zipcode": "11374"
+  },
+  "borough": "Nalchik",
+  "cuisine": "Jewish/Kosher",
+  "grades": [
+    {
+      "date": "2014-11-24T00:00:00.000Z",
+      "grade": "Z",
+      "score": 20
+    },
+    {
+      "date": "2013-01-17T00:00:00.000Z",
+      "grade": "A",
+      "score": 13
+    },
+    {
+      "date": "2012-08-02T00:00:00.000Z",
+      "grade": "A",
+      "score": 13
+    },
+    {
+      "date": "2011-12-15T00:00:00.000Z",
+      "grade": "B",
+      "score": 25
+    }
+  ],
+  "name": "Tov Kosher German",
+  "restaurant_id": "40356068"
+}
+
+###
+
+GET http://localhost:8080/api/restaurants?page=1&perPage=5&borough=Bronx HTTP/1.1
+
+###
+GET http://localhost:8080/api/restaurants?page=1&perPage=5 HTTP/1.1
+
+###
+GET http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42930 HTTP/1.1
+
+###
+
+PUT http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42930 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Tov Kosher German",
+    "borough": "Nalchik"
+}
+
+###
+DELETE http://localhost:8080/api/restaurants/5eb3d668b31de5d588f42930 HTTP/1.1
